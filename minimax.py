@@ -1,2 +1,0 @@
-def minimax(game):
-    return
