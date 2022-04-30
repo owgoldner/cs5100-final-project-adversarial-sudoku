@@ -5,9 +5,9 @@ class Board:
     # Creates an empty 9x9 board with all values initialized to None
     def __init__(self):
         self.array = []
-        for i in range(9):
+        for _ in range(9):
             row = []
-            for j in range(9):
+            for _ in range(9):
                 row.append(None)
             self.array.append(row)
 
@@ -85,6 +85,13 @@ class Board:
                     return False
 
         return True
+
+    def copy(self):
+        newBoard = Board()
+        for i in range(9):
+            for j in range(9):
+                newBoard.setValue((i,j), self.getValue((i,j)))
+        return newBoard
 
     # Prints the board to console
     def printBoard(self):
